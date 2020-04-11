@@ -14,8 +14,10 @@ I have added a log system to track logging in the system with different debug le
 Prerequisites: I assume you have install, docker, npm and git.
 
 1. Clone project
-   `git clone git@github.com:ekaitzht/stuart.git`
-   `cd stuart`
+
+`git clone git@github.com:ekaitzht/stuart.git`
+
+`cd stuart`
 
 1. Build the docker containers
 
