@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+  api:
+    build:
+      context: ./api
+    volumes:
+      - /app/node_modules
+      - ./api:/app
+    links:
+      - mongodb
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_PORT=27017
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - 8080:80
