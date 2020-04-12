@@ -52,10 +52,10 @@ The main tool to control concurrency in APIs and avoid race conditions is to use
 ### If you were to have more time, what would you do? Briefly explain what could be improved.
 
 - I would build more tests with [Chai.js](https://www.chaijs.com/) and mock the database connections in order to have better testing and increase the reliability of the application.
-- Create contract testing with tools like [pactjs](https://github.com/pact-foundation/pact-js) so we can prevent API breaking changes when multiple developers are working at the same time in a microservice environment. This should reduce the number of bugs that are shipped to production.
-- The error messages are not standardized and I would standardize them to prevent confusion.
-- I didn't environmentalize the application. For example, the URL connection to the database is not in a .env file following [12factor](https://12factor.net/).
+- I would implement contract testing with tools like [pactjs](https://github.com/pact-foundation/pact-js) so we can prevent API breaking changes when multiple developers are working at the same time in a microservice environment. This should reduce the number of bugs that are shipped to production.
+- The error messages are not standardized so I would standardize them to prevent confusion.
+- I would environmentalize the application. For example, the URL connection to the database is not in a .env file following [12factor](https://12factor.net/config).
 - Also based on the requirements of the API we could build a Serverless application. This would reduce costs because we would not need to maintain servers manually and we would only pay for the time the API is actually being used.
 - I would also add a security solution with a standard like JWT Web Tokens. This would prevent unauthorized access to the API.
 - In a scenario where many stakeholders need to interact with the API, it would be useful to implement an API Management tool for management access users, security, rate limiting, etc.
-- I would also implement a validator contract system like [express-validator](https://express-validator.github.io/docs/) in conjunction with OpenAPI Swagger to validate requests from the clients, making the API more user friendly and robust.
+  - I would implement a validator contract system like [express-validator](https://express-validator.github.io/docs/) in conjunction with OpenAPI Swagger to validate requests from the clients, making the API more user friendly and robust.
