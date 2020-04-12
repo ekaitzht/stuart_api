@@ -1,4 +1,4 @@
-## Architectural platform:
+## Introduction
 
 I have chosen NodeJS programming language with Expressjs framework. This decision was mainly made for two reasons. The main reason was performance. With NodeJS and Expressjs, we can receive many requests to the server concurrently. This is because Nodejs supports many concurrent requests with the event loop system and it doesn't hijack many threads in the CPU. Secondly, I have chosen these languages because I have worked with them in the past so I am able to effectively implement this solution.
 
@@ -24,11 +24,13 @@ Prerequisites: to run this project, you will need docker, npm and git installed 
 
    `docker-compose up`
 
-#3 Run tests
+4. Run tests
 
-    1. `cd ./api`
-    2. `npm install`
-    3. `npm run test`
+   1. `cd ./api`
+   2. `npm install`
+   3. `npm run test`
+
+## Project questions
 
 ### We plan to run this service in the AWS environment. Prepare this API to be deployed.
 
@@ -56,4 +58,4 @@ The main tool to control concurrency in APIs and avoid race conditions is to use
 - Also based on the requirements of the API we could build a Serverless application. This would reduce costs because we would not need to maintain servers manually and we would only pay for the time the API is actually being used.
 - I would also add a security solution with a standard like JWT Web Tokens. This would prevent unauthorized access to the API.
 - In a scenario where many stakeholders need to interact with the API, it would be useful to implement an API Management tool for management access users, security, rate limiting, etc.
-  - I would also implement a validator contract system like [express-validator](https://express-validator.github.io/docs/) in conjunction with OpenAPI Swagger to validate requests from the clients, making the API more user friendly and robust.
+- I would also implement a validator contract system like [express-validator](https://express-validator.github.io/docs/) in conjunction with OpenAPI Swagger to validate requests from the clients, making the API more user friendly and robust.
