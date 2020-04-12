@@ -58,4 +58,4 @@ The main tool to control concurrency in APIs and avoid race conditions is to use
 - Also based on the requirements of the API we could build a Serverless application. This would reduce costs because we would not need to maintain servers manually and we would only pay for the time the API is actually being used.
 - I would also add a security solution with a standard like JWT Web Tokens. This would prevent unauthorized access to the API.
 - In a scenario where many stakeholders need to interact with the API, it would be useful to implement an API Management tool for management access users, security, rate limiting, etc.
-  - I would implement a validator contract system like [express-validator](https://express-validator.github.io/docs/) in conjunction with OpenAPI Swagger to validate requests from the clients, making the API more user friendly and robust.
+- I would implement a validator contract system like [express-validator](https://express-validator.github.io/docs/) in conjunction with OpenAPI Swagger to validate requests from the clients, making the API more user friendly and robust.
