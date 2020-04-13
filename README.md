@@ -8,7 +8,7 @@ I have used MongoDB for the persistence of the data in a unique document so any 
 
 ## How to run the project
 
-Prerequisites: to run this project, you will need docker, npm and git installed in your computer.
+Prerequisites: to run this project, you will need docker, npm, curl and git installed in your computer.
 
 1. Clone project
 
@@ -29,6 +29,22 @@ Prerequisites: to run this project, you will need docker, npm and git installed 
    1. `cd ./api`
    2. `npm install`
    3. `npm run test`
+
+5. Run manually the api with curl
+
+```bash
+curl -X POST http://localhost:8080/api/couriers --header "Content-Type: application/json" -d '{"id": "124","max_capacity": 45}'
+
+curl -X PUT http://localhost:8080/api/couriers/111 --header "Content-Type: application/json" -d '{"id": "124","max_capacity": 50}'
+
+curl -X DELETE http://localhost:8080/api/couriers/124
+
+curl -X GET http://localhost:8080/api/couriers/lookup --header "Content-Type: application/json" -d '{"capacity_required": 0}'
+
+curl -X POST http://localhost:8080/api/couriers/124/package --header "Content-Type: application/json" -d '{"packageId": "x128","description": "headphones", "weight":10}'
+
+curl -X DELETE http://localhost:8080/api/couriers/124/package/x128
+```
 
 ## Project questions
 
