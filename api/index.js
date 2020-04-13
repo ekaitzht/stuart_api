@@ -82,7 +82,6 @@ app.post("/couriers/:id/package", async function(req, res) {
   try {
     const package = req.body;
     const courier = await Courier.findOne({ id: req.params.id });
-
     if (courier) {
       if (courier.max_capacity - package.weight < 0) {
         res
@@ -118,6 +117,8 @@ app.delete("/couriers/:id/package/:packageId", async function(req, res) {
       if (index > -1) {
         courier.max_capacity += courier.packages[index].weight;
         courier.packages.splice(index, 1);
+        courier.save();
+        logger.info("Package from courier deleted", { courier });
         res.status(200).json({ courier, msg: "Package deleted" });
       } else {
         logger.info(`Package  ${req.params.packageId}  not found`, courier);
